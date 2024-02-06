@@ -1,11 +1,13 @@
-import React from 'react';
-import './Portfolio.css'
+import React ,{useContext} from 'react';
+import './Portfolio.css';
+import Toggle from './Toggle';
 const Navbar = () => {
+  
   return (
     <div className='n-wrapper'>
        <div className='n-left'>
          <div className='n-name'>Andrew Joseph</div>
-         <span>toggle</span>
+         <Toggle />
        </div>
        <div className='n-right'>
          <div className='n-list'>
@@ -17,7 +19,7 @@ const Navbar = () => {
                 <li>Testimonials</li>
             </ul>
          </div>
-         <button className='button n-button'>Contact Us</button>
+         <button className='button n-button'>Contact</button>
        </div>
     </div>
   )

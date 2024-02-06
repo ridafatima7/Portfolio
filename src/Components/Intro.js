@@ -1,8 +1,9 @@
 import React from 'react';
 import './Portfolio.css'
 import FloatingDiv from '../FloatingDiv.js/FloatingDiv';
-
+import {motion} from 'framer-motion'
 const Intro = () => {
+  const transition={duration:'2',type:'spring'}
   return (
     <div className='intro'>
       <div className='i-left'>
@@ -25,10 +26,20 @@ const Intro = () => {
        <img src='Vector1.png' alt='' />
        <img src='Vector2.png' alt='' />
        <img src='boy.png' alt='' />
-       <img src='/glassesimoji.png' alt='' />
-       <div style={{top:'-4%',left:'60%'}}>
+       <motion.img
+        initial={{left:'-1%'}}
+        whileInView={{left:'-20%'}}
+        transition={transition}
+        className='floatingDiv'
+        src='/glassesimoji.png' alt='' />
+       <motion.div 
+       initial={{left:'74%',top:'4%'}}
+       whileInView={{left:'68%'}}
+       transition={transition}
+       className='floatingDiv'
+       style={{top:'-4%',left:'60%'}}>
        <FloatingDiv  image='/crown.png' txt2='Developer' txt1='Web'/>
-       </div>
+       </motion.div>
        <div style={{top:'18rem',left:'0rem'}}>
        <FloatingDiv  image='/thumbup.png' txt1='Best Design' txt2='Award'/>
        </div>
